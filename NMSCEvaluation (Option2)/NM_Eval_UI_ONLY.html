@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#nmeval').DataTable({
+        "processing" : true,
+        "ajax" : {
+            "url" : "https://api.punkapi.com/v2/beers",
+            dataSrc : ''
+        },
+        "columns" : [ {
+            "data" : "id"
+        }, {
+            "data" : "name"
+        }, {
+            "data" : "tagline"
+        }, {
+            "data" : "first_brewed"
+        }]
+    });
+});
+</script>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+  <h1>Brewing Beer</h1>
+</div>
+<div class="container">
+<div class="table-responsive"> 
+<table id="nmeval" class="table" cellspacing="1" width="100%">
+     <thead>
+		 <div class="row">
+         <tr>
+			 <div class="col-sm-4">
+             <th>ID</th>
+			 </div>
+			 <div class="col-sm-4">
+             <th>Name</th>
+		     </div>
+			 <div class="col-sm-4">
+             <th>Tagline</th>
+		     </div>
+			 <div class="col-sm-4">
+             <th>First Brewed</th>
+		     </div>
+		 
+         </tr>
+	 </div>
+        </thead>
+ </table>
+</div>
+</div>
+
+</body>
+</html>
